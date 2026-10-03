@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="Lumora product stamp - created by Divyanshi">
+  <defs>
+    <radialGradient id="s" cx="50%" cy="38%" r="65%"><stop offset="0%" stop-color="#FFF6D6"/><stop offset="100%" stop-color="#F8D570"/></radialGradient>
+  </defs>
+  <rect x="6" y="6" width="548" height="288" rx="30" fill="#FFF9EA" stroke="#772233" stroke-width="3"/>
+  <rect x="18" y="18" width="524" height="264" rx="22" fill="none" stroke="#E6B5BC" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <g transform="translate(244 30) scale(1.13)">
+    <circle cx="32" cy="32" r="30" fill="url(#s)"/>
+    <path d="M31 48C24.5 43.5 16 42.5 9.5 44V27C16 25.5 24.5 26.5 31 31Z" fill="#772233"/>
+    <path d="M33 48C39.5 43.5 48 42.5 54.5 44V27C48 25.5 39.5 26.5 33 31Z" fill="#8E2F3F"/>
+    <path d="M32 31V20" stroke="#5F1A29" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M32 24C27 24 23.5 21 23 16.5C27.5 16.5 31 19.5 32 24Z" fill="#AE4F5E"/>
+    <path d="M32 21.5C37 21.5 40.5 18.5 41 14C36.5 14 33 17 32 21.5Z" fill="#772233"/>
+    <path d="M47 8.5L48.3 12.7L52.5 14L48.3 15.3L47 19.5L45.7 15.3L41.5 14L45.7 12.7Z" fill="#5F1A29"/>
+  </g>
+  <text x="280" y="140" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="44" font-weight="700" fill="#5F1A29">LUMORA</text>
+  <text x="280" y="174" text-anchor="middle" font-family="Lexend, 'Segoe UI', Helvetica, sans-serif" font-size="18" fill="#3A1F1C">Adaptive Intelligence. Personalised Learning.</text>
+  <line x1="150" y1="196" x2="410" y2="196" stroke="#E6B5BC" stroke-width="1.5"/>
+  <text x="280" y="224" text-anchor="middle" font-family="Lexend, 'Segoe UI', Helvetica, sans-serif" font-size="13.5" fill="#76695C">React • FastAPI • PostgreSQL + pgvector • AI • ML • RAG</text>
+  <text x="280" y="258" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-style="italic" fill="#772233">Created by Divyanshi</text>
+</svg>

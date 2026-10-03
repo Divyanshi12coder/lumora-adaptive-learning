@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accessibility preferences are applied through these variables / classes on <html>
+   (see src/lib/prefs.tsx). Every learner can change them in Settings. */
+:root {
+  --text-scale: 1;
+  --reading-line-height: 1.65;
+  color-scheme: light;
+}
+
+html {
+  font-size: calc(100% * var(--text-scale));
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-cream-50 font-sans text-cocoa antialiased;
+  line-height: 1.55;
+}
+
+html.font-readable body,
+html.font-readable .font-sans,
+html.font-readable .font-display {
+  font-family: "Atkinson Hyperlegible", Verdana, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.reading {
+  line-height: var(--reading-line-height);
+  max-width: 68ch;
+}
+
+/* Higher contrast mode: stronger borders and darker secondary text. */
+html.high-contrast {
+  --tw-ring-color: #2c0b13;
+}
+html.high-contrast body {
+  @apply bg-white text-black;
+}
+html.high-contrast .text-sand-500,
+html.high-contrast .text-sand-400,
+html.high-contrast .text-cocoa-soft {
+  color: #2c1a17 !important;
+}
+html.high-contrast .border-sand-200,
+html.high-contrast .border-cream-200 {
+  border-color: #5a4f45 !important;
+}
+
+/* Reduced motion: honour both the OS setting and the in-app toggle. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+html.reduce-motion { scroll-behavior: auto; }
+html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* Clear, consistent keyboard focus everywhere. */
+:focus-visible {
+  outline: 3px solid #772233;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[0.95rem] font-medium
+      transition duration-200 ease-out active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-maroon-600 text-cream-50 shadow-soft hover:bg-maroon-700 hover:shadow-lift;
+  }
+  .btn-secondary {
+    @apply btn border border-maroon-200 bg-white text-maroon-700 hover:border-maroon-300 hover:bg-maroon-50;
+  }
+  .btn-sunny {
+    @apply btn bg-cream-300 text-maroon-800 hover:bg-cream-400;
+  }
+  .btn-ghost {
+    @apply btn text-maroon-700 hover:bg-maroon-50;
+  }
+  .card {
+    @apply rounded-xl2 border border-sand-200/70 bg-white shadow-soft;
+  }
+  .card-sunny {
+    @apply rounded-xl2 border border-cream-300/70 bg-cream-100;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.16em] text-maroon-500;
+  }
+  .h-display {
+    @apply font-display font-semibold tracking-tight text-maroon-800;
+  }
+  .input {
+    @apply min-h-[48px] w-full rounded-2xl border border-sand-200 bg-white px-4 py-3 text-base text-cocoa placeholder:text-sand-400
+      focus:border-maroon-400 focus:outline-none focus:ring-4 focus:ring-maroon-100;
+  }
+  .skeleton {
+    @apply rounded-xl bg-[length:800px_100%] animate-shimmer;
+    background-image: linear-gradient(90deg, #f2ece3 0px, #faf7f2 160px, #f2ece3 320px);
+  }
+}
+
+/* Focus mode hides decorative and secondary UI while learning. */
+html.focus-mode [data-decorative="true"] { display: none !important; }
+
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(119, 34, 51, 0.06) 1px, transparent 0);
+  background-size: 22px 22px;
+}
